@@ -1,0 +1,25 @@
+name       : desmume
+version    : 0.9.11
+release    : 1
+source     :
+    - http://netix.dl.sourceforge.net/project/desmume/desmume/0.9.11/desmume-0.9.11.tar.gz : 3ab34ba6cc009566245025c1dd94bf449b6a1b416d24387cb42e183c78e38896
+license    : GPL-2.0
+component  : games.emulator
+summary    : DeSmuME is software that allows you to emulate a Nintendo DS system.
+description: |
+    DeSmuME is software that allows you to emulate a Nintendo DS system.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(gl)
+    - pkgconfig(glu)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(lua-5.1)
+    - pkgconfig(sdl)
+    - pkgconfig(soundtouch)
+setup      : |
+    sed -i "s|abs|(u32)abs|g" src/ctrlssdl.cpp
+    %configure --enable-wifi --enable-openal CC=clang CXX=clang++
+build      : |
+    %make
+install    : |
+    %make_install
