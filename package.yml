@@ -1,6 +1,6 @@
 name       : desmume
 version    : 0.9.11
-release    : 3
+release    : 4
 source     :
     - http://netix.dl.sourceforge.net/project/desmume/desmume/0.9.11/desmume-0.9.11.tar.gz : 3ab34ba6cc009566245025c1dd94bf449b6a1b416d24387cb42e183c78e38896
 license    : GPL-2.0
@@ -13,7 +13,7 @@ builddeps  :
     - pkgconfig(gl)
     - pkgconfig(glu)
     - pkgconfig(gtk+-2.0)
-    - pkgconfig(lua-5.3)
+    - pkgconfig(lua-5.1)
     - pkgconfig(sdl)
     - pkgconfig(soundtouch)
 setup      : |
